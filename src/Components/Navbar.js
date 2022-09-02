@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import {
-    BrowserRouter as Router,
     useLocation,
     Link
 } from 'react-router-dom'

@@ -7,9 +7,10 @@ import {useHistory} from 'react-router-dom';
 export const Home = () => {
 	let history=useHistory();
 	const context = useContext(NoteContext);
-	const { notes, fetchNotes,updateNotes } = context;
+	const { notes, updateNotes } = context;
 	const [note, setNote] = useState({id:"",etitle:"",edescription:"",etag:""})
 	useEffect(() => {
+		const {fetchNotes}=context;
 		if(localStorage.getItem('token'))
 		{
 			fetchNotes();

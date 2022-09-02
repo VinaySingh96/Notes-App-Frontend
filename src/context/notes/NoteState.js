@@ -56,6 +56,7 @@ const NoteState = (props) => {
                 "auth-token": localStorage.getItem('token')
             }
         });
+        console.log(result);
         setNotes(notes.filter((note) => { return note._id !== id }));
     }
 
@@ -70,10 +71,12 @@ const NoteState = (props) => {
             },
             body:JSON.stringify({title,description,tag})
         });
-
+        
+        console.log(result);
         let newNotes = JSON.parse(JSON.stringify(notes));
         let i = 0;
         let note = await notes.find((note) => { i++; return note._id === id })
+        console.log(note);
         newNotes[i - 1].title = title;
         newNotes[i - 1].description = description;
         newNotes[i - 1].tag = tag;

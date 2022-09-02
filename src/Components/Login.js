@@ -25,7 +25,7 @@ const Login = () => {
     });
     const data = await result.json();
     const data2=JSON.stringify(data);
-    if(data2[2]=='e')
+    if(data2[2]==='e')
     {
       alert("Invalid Email/Password");
       return;
