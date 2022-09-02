@@ -10,6 +10,8 @@ export const Home = () => {
 	const { notes, updateNotes } = context;
 	const [note, setNote] = useState({id:"",etitle:"",edescription:"",etag:""})
 	useEffect(() => {
+		const context = useContext(NoteContext);
+		let history=useHistory();
 		const {fetchNotes}=context;
 		if(localStorage.getItem('token'))
 		{
